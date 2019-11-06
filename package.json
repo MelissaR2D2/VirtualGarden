@@ -1,0 +1,22 @@
+{
+  "name": "virtualgarden",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelissaR2D2/VirtualGarden.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MelissaR2D2/VirtualGarden/issues"
+  },
+  "homepage": "https://github.com/MelissaR2D2/VirtualGarden#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
