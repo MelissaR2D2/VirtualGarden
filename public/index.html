@@ -3,38 +3,35 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
     <title>GroGarden</title>
 </head>
 
 <body>
-    <div id="footer">Website designed and created by Melissa Robertson and Tyla Merrill, November 2019. <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by brgfx - www.freepik.com.</a>
-        <a class="diff" href="https://github.com/MelissaR2D2/VirtualGarden">Click here for the GitHub repository.</a></div>
-    </div>
-    <div id="app">
-        <h1>Grow Your Garden</h1>
-        <div class="controls">
-            <button @click="addItem('red')">Add Red Flower</button>
-            <button @click="addItem('yellow')">Add Yellow Flower</button>
-            <button @click="addItem('blue')">Add Blue Flower</button>
+    <div class="container">
+        <div id="footer">Website designed and created by Melissa Robertson and Tyla Merrill, November 2019. <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by brgfx - www.freepik.com.</a>
+            <a class="diff" href="https://github.com/MelissaR2D2/VirtualGarden">Click here for the GitHub repository.</a></div>
+        <div id="app">
+            <h1>Grow Your Garden</h1>
+            <div class="controls">
+                <button @click="addItem('red')">Add Red Flower</button>
+                <button @click="addItem('yellow')">Add Yellow Flower</button>
+                <button @click="addItem('blue')">Add Blue Flower</button>
+                <button @click="deleteAll()">Clear Garden</button>
+            </div>
+            <ul>
+                <li v-for="item in items">
+                    <img class="flower" v-bind:src="item.img">
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li v-for="item in items">
-                {{ item.color}}
-            </li>
-        </ul>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" integrity="sha256-lrZTgsdM1iVdRigETFOU8u8/BmLX1ysQ8bzrULbuVFU=" crossorigin="anonymous"></script>
-<<<<<<< HEAD
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
     <script src="/script.js"></script>
-=======
-    <script src="./script.js"></script>
->>>>>>> a927b85317615b4a28d9d68d92d086898a36dec4
 </body>
 
 </html>

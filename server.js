@@ -13,17 +13,7 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-let items = [{
-        id: 0,
-        color: "red",
-        img: ""
-    },
-    {
-        id: 1,
-        color: "blue",
-        img: ""
-    }
-];
+let items = [];
 let id = 0;
 
 app.post('/api/flowers', (req, res) => {

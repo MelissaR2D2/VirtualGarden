@@ -16,18 +16,18 @@ var app = new Vue({
             this.flower_color = color;
             var flower_url;
             if (color == "blue") {
-                flower_url = "";
+                flower_url = "./images/bFlower.png";
             }
             else if (color == "red") {
-                flower_url = "";
+                flower_url = "./images/rFlower.png";
             }
             else if (color == "yellow") {
-                flower_url = "";
+                flower_url = "./images/yFlower.png";
             }
             try {
                 const response = await axios.post("/api/flowers", {
                     color: color,
-                    completed: flower_url
+                    img: flower_url
                 });
                 this.flower_color = "";
                 this.getItems();
@@ -45,19 +45,9 @@ var app = new Vue({
                 console.log(error);
             }
         },
-        showAll() {
-            this.show = 'all';
-        },
-        showActive() {
-            this.show = 'active';
-        },
-        showCompleted() {
-            this.show = 'completed';
-        },
-        deleteCompleted() {
+        deleteAll() {
             this.items.forEach(item => {
-                if (item.completed)
-                    this.deleteItem(item);
+                this.deleteItem(item);
             });
         },
         async getItems() {
