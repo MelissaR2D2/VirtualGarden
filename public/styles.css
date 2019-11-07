@@ -1,8 +1,46 @@
 body {
+    margin: 0px;
     background: url(./background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 
+}
+
+h1 {
+    text-align: center;
+    color: #14520b;
+}
+
+li {
+    list-style-type: none;
+    float: left;
+}
+
+ul {
+    clear: both;
+}
+
+
+a {
+    color: #A8D06D;
+}
+
+a:hover {
+    color: while;
+}
+
+.controls {
+    text-align: center;
+}
+
+#footer {
+    font-size: 13px;
+    text-align: center;
+    width: 98%;
+    padding: 10px 1%;
+    margin: 0px;
+    background: #28681E;
+    color: #A8D06D;
 }
