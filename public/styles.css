@@ -45,8 +45,37 @@ a:hover {
     color: while;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .controls {
     text-align: center;
+}
+
+#contain {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 7px;
+    touch-action: none;
+}
+
+#item {
+    width: 100px;
+    height: 100px;
+    touch-action: none;
+    user-select: none;
+}
+
+#item:active {}
+
+#item:hover {
+    cursor: pointer;
+    border-width: 20px;
 }
 
 #footer {
@@ -60,5 +89,5 @@ a:hover {
 }
 
 .flower {
-    width: 10%
+    width: 100%
 }

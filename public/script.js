@@ -60,14 +60,71 @@ var app = new Vue({
                 console.log(error);
             }
         },
-        dragItem(item) {
-            this.drag = item;
-        },
-        dropItem(item) {
-            const indexItem = this.items.indexOf(this.drag);
-            const indexTarget = this.items.indexOf(item);
-            this.items.splice(indexItem, 1);
-            this.items.splice(indexTarget, 0, this.drag);
-        },
-    }
+    },
 });
+
+var dragItem = document.querySelector("#item");
+var contain = document.querySelector("#contain");
+
+var active = false;
+var currentX;
+var currentY;
+var initialX;
+var initialY;
+var xOffset = 0;
+var yOffset = 0;
+
+contain.addEventListener("touchstart", dragStart, false);
+contain.addEventListener("touchend", dragEnd, false);
+contain.addEventListener("touchmove", drag, false);
+
+contain.addEventListener("mousedown", dragStart, false);
+contain.addEventListener("mouseup", dragEnd, false);
+contain.addEventListener("mousemove", drag, false);
+
+function dragStart(e) {
+    if (e.type === "touchstart") {
+        initialX = e.touches[0].clientX - xOffset;
+        initialY = e.touches[0].clientY - yOffset;
+    }
+    else {
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+    }
+
+    if (e.target === dragItem) {
+        active = true;
+    }
+}
+
+function dragEnd(e) {
+    initialX = currentX;
+    initialY = currentY;
+
+    active = false;
+}
+
+function drag(e) {
+    if (active) {
+
+        e.preventDefault();
+
+        if (e.type === "touchmove") {
+            currentX = e.touches[0].clientX - initialX;
+            currentY = e.touches[0].clientY - initialY;
+        }
+        else {
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+        }
+
+        xOffset = currentX;
+        yOffset = currentY;
+
+        setTranslate(currentX, currentY, dragItem);
+    }
+}
+
+function setTranslate(xPos, yPos, el) {
+    el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+}
