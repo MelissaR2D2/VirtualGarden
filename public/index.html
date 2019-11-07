@@ -4,11 +4,25 @@
 <head>
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css" />
-    <title>Vue Todo</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>GroGarden</title>
 </head>
 
 <body>
+    <div id="app">
+        <h1>Grow Your Garden</h1>
+        <div class="controls">
+            <button @click="addItem('red')">Add Red Flower</button>
+            <button @click="addItem('yellow')">Add Yellow Flower</button>
+            <button @click="addItem('blue')">Add Blue Flower</button>
+        </div>
+        <ul>
+            <li v-for="item in items">
+                {{ item.color}}
+            </li>
+        </ul>
+    </div>
+
     <a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by brgfx - www.freepik.com</a>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" integrity="sha256-lrZTgsdM1iVdRigETFOU8u8/BmLX1ysQ8bzrULbuVFU=" crossorigin="anonymous"></script>
