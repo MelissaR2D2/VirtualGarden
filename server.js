@@ -21,7 +21,9 @@ app.post('/api/flowers', (req, res) => {
     let item = {
         id: id,
         color: req.body.color,
-        img: req.body.img
+        img: req.body.img,
+        initialX: req.body.initialX,
+        initialY: req.body.initialY
     };
     items.push(item);
     res.send(item);
@@ -45,6 +47,8 @@ app.put('/api/flowers/:id', (req, res) => {
     let item = items[index];
     item.color = req.body.color;
     item.img = req.body.img;
+    item.initialX = req.body.initialX;
+    item.initialY = req.body.initialY;
     res.send(item);
 });
 
