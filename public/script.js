@@ -16,7 +16,13 @@ var app = new Vue({
         init: true
     },
     created: function() {
-        this.getItems();
+        this.getItems()
+            .then((promise1Result) => {
+                this.zeroPositions();
+            })
+            .then((promise2Result) => {
+                this.getItems();
+            })
     },
     computed: {
 
@@ -157,8 +163,7 @@ var app = new Vue({
             console.log("called");
             console.log(this.items.length)
             for (var i = 0; i < this.items.length; i++) {
-                this.items[i].initialX = 0;
-                this.items[i].initialY = 0;
+                this.updateItem(this.items[i], 0, 0)
             }
         }
     },
