@@ -20,7 +20,7 @@
             <button @click="addItem('blue')">Add Blue Flower</button>
         </div>
         <ul>
-            <li v-for="item in items">
+            <li v-for="item in items" draggable="true" v-on:dragstart="dragItem(item)" v-on:dragover.prevent v-on:drop="dropItem(item)">
                 {{ item.color}}
             </li>
         </ul>
