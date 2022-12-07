@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/MelissaR2D2/VirtualGarden#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "vue": "^2.6.10",
     "vue-draggable": "^2.0.3",
     "vue-draggable-resizable": "^2.0.1",
